@@ -28,6 +28,17 @@ const DetailsScreen = props => {
         }}>
         <Text>run callback</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate({
+            name: 'Home',
+            params: {settings: 'pass back'},
+            merge: true,
+          });
+        }}>
+        <Text>Pass back props</Text>
+      </TouchableOpacity>
     </View>
   );
 };

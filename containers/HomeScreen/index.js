@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {
   SafeAreaView,
@@ -16,7 +16,26 @@ import ButtonWithFuncComp from '../../Components/ButtonWithFuncComp';
 import ListwithFuncComp from '../../Components/ListWithFuncComp';
 import ImageWithFuncComp from '../../Components/ImageWithFuncComp';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({navigation, route}) => {
+  //componentdidmount
+  useEffect(() => {}, []);
+
+  //componentDidUpdate
+  useEffect(() => {
+    if (route.params) {
+      console.log(route.params);
+    }
+  }, [route.params]);
+
+  //   useEffect(() => {
+  //     if (route.params?.post) {
+  //       // Post updated, do something with `route.params.post`
+  //       // For example, send the post to the server
+
+  //       console.log(route.params?.post);
+  //     }
+  //   }, [route.params?.post]);
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
