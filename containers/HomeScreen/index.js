@@ -27,9 +27,9 @@ const HomeScreen = ({navigation, route}) => {
     };
   }, []);
 
-  useEffect(() => {
-    //did mount logice here
-  }, []);
+  //   useEffect(() => {
+  //     //did mount logice here
+  //   }, []);
 
   //componentDidUpdate
   useEffect(() => {

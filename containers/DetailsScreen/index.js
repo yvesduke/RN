@@ -1,6 +1,17 @@
 import {View, Text, TouchableOpacity} from 'react-native';
+import {useEffect, useState} from 'react';
 
 const DetailsScreen = props => {
+  const [nameState, setNameState] = useState(props.route.params.name);
+  const [phoneState, setPhoneState] = useState(props.route.params.phone);
+
+  useEffect(() => {
+    setNameState(props.route.params.name);
+    setPhoneState(props.route.params.phone);
+  }, [props.route.params]);
+
+  //   const [stateObject, setStateObject] = useState({});
+
   const {name, phone, callback} = props.route.params;
 
   return (
@@ -8,8 +19,8 @@ const DetailsScreen = props => {
       <Text>Details Screen</Text>
 
       <View style={{marginVertical: 10}}>
-        <Text>{name}</Text>
-        <Text>{phone}</Text>
+        <Text>{nameState}</Text>
+        <Text>{phoneState}</Text>
       </View>
 
       <TouchableOpacity
@@ -38,6 +49,13 @@ const DetailsScreen = props => {
           });
         }}>
         <Text>Pass back props</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          setNameState('Duke 2.0');
+          setPhoneState('9999999');
+        }}>
+        <Text>reset state</Text>
       </TouchableOpacity>
     </View>
   );
