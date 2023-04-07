@@ -5,6 +5,8 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
@@ -14,7 +16,7 @@ import ButtonWithFuncComp from '../../Components/ButtonWithFuncComp';
 import ListwithFuncComp from '../../Components/ListWithFuncComp';
 import ImageWithFuncComp from '../../Components/ImageWithFuncComp';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -39,6 +41,19 @@ const HomeScreen = () => {
           <ListwithFuncComp />
           <ImageWithFuncComp />
         </View>
+
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Details', {
+              name: 'Duke',
+              phone: '123456789',
+              callback: data => {
+                console.log(data);
+              },
+            });
+          }}>
+          <Text>Goto Details</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
