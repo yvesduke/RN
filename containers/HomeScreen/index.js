@@ -18,7 +18,18 @@ import ImageWithFuncComp from '../../Components/ImageWithFuncComp';
 
 const HomeScreen = ({navigation, route}) => {
   //componentdidmount
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    //did mount logice here
+
+    return () => {
+      //componentwillunmount
+    };
+  }, []);
+
+  useEffect(() => {
+    //did mount logice here
+  }, []);
 
   //componentDidUpdate
   useEffect(() => {
