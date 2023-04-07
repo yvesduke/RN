@@ -27,6 +27,10 @@ import {
 import ButtonWithFuncComp from './Components/ButtonWithFuncComp';
 import ListwithFuncComp from './Components/ListWithFuncComp';
 import ImageWithFuncComp from './Components/ImageWithFuncComp';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -58,7 +62,7 @@ function Section({children, title}: SectionProps): JSX.Element {
   );
 }
 
-function App(): JSX.Element {
+const HomeScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -81,24 +85,20 @@ function App(): JSX.Element {
           }}>
           <ButtonWithFuncComp bgClr="pink" />
           <ListwithFuncComp />
-          <ImageWithFuncComp/>
-          {/* <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section> */}
-          {/* <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section> */}
-          {/* <Section title="Debug">
-            <DebugInstructions />
-          </Section> */}
-          {/* <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section> */}
-          {/* <LearnMoreLinks /> */}
+          <ImageWithFuncComp />
         </View>
       </ScrollView>
     </SafeAreaView>
+  );
+};
+
+function App(): JSX.Element {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
