@@ -10,8 +10,6 @@ const DetailsScreen = props => {
     setPhoneState(props.route.params.phone);
   }, [props.route.params]);
 
-  //   const [stateObject, setStateObject] = useState({});
-
   const {name, phone, callback} = props.route.params;
 
   return (
@@ -32,7 +30,6 @@ const DetailsScreen = props => {
 
       <TouchableOpacity
         onPress={() => {
-          //   props.navigation.navigate('Home');
           if (callback) {
             callback({name: 'YVES'});
           }

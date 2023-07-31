@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   SafeAreaView,
-  //   View,
   FlatList,
   StyleSheet,
   Text,
@@ -23,12 +22,6 @@ const StaticDataSource = [
     title: 'Third Item',
   },
 ];
-
-// const Item = ({title,}) => (
-//   <View style={styles.item}>
-//     <Text style={styles.title}>{title}</Text>
-//   </View>
-// );
 
 const Item = ({item, onPress, backgroundColor, textColor}) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, {backgroundColor}]}>

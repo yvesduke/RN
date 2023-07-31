@@ -5,9 +5,6 @@ const Separator = () => <View style={styles.separator} />;
 
 const ButtonWithFuncComp = props => {
   return (
-    // <View
-    // style = {{backgroundColor: props.bgClr, width: 60, height: 60}}
-    // ></View>
 
     <View>
       <Text style={styles.title}>This is a Titlle.</Text>
@@ -23,17 +20,6 @@ const ButtonWithFuncComp = props => {
           Alert.alert('Cannot press this Button because its deabled by default')
         }
       />
-      {/* <Separator /> */}
-      {/* <Button style={styles.fixToText}
-        title="Left Button"
-        onPress={() => Alert.alert('Left Button is Pressed')}
-      /> */}
-      {/* <Separator /> */}
-      {/* <Button
-        style={styles.fixToText}
-        title="Right Button"
-        onPress={() => Alert.alert('Right Button is Pressed')}
-      /> */}
       <Separator/>
       <Text style={styles.title}>Touchable Opacity Button.</Text>
       <TouchableOpacity style={styles.fixToText}>
